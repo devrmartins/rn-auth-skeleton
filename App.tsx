@@ -2,25 +2,11 @@ import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { Home } from './src/screens/Home';
-import { 
-  Roboto_400Regular,
-  Roboto_700Bold
-} from '@expo-google-fonts/roboto';
-import { 
-  RobotoCondensed_300Light,
-  RobotoCondensed_400Regular,
-  RobotoCondensed_700Bold
-} from '@expo-google-fonts/roboto-condensed';
 import AppLoading from 'expo-app-loading';
+import { FONTS_LOADED } from './src/theme';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-    Roboto_700Bold,
-    RobotoCondensed_300Light,
-    RobotoCondensed_400Regular,
-    RobotoCondensed_700Bold
-  });
+  const [fontsLoaded] = useFonts(FONTS_LOADED);
 
   if (!fontsLoaded) {
     return <AppLoading />
